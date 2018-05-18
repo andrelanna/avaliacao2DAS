@@ -3,9 +3,9 @@ package Financeiro;
 public abstract class Modalidade {
 
 	String banco;
-	float i;
-    Financiamento fin;
-    Parcela[] parcelas;
+	public float i;
+    public Financiamento fin;
+    public Parcela[] parcelas;
 
 	Modalidade(String banco, float i) {
 		this.banco = banco;
