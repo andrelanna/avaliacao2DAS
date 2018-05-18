@@ -41,12 +41,18 @@ public class Financiamento {
 		simulacoes = temp;
 		return true;
 	}
-
+	
+	public float calcularTotalJuros(Parcela[] parcelas) {
+		float juros = 0;
+		for (Parcela p : parcelas) {
+			juros += p.getJuros();
+		}
+		return juros;
+	}
+	
 	public float getPv() {
 		return pv;
 	}
-
-	
 
 	public int getN() {
 		return n;

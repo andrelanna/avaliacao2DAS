@@ -26,14 +26,12 @@ public abstract class Modalidade {
 	public void adicionarFinanciamento(Financiamento fin) {
 		this.fin = fin;
 	}
+	
+	public Parcela[] getParcelas() {
+		return parcelas;
+	}
 
 	public float calcularTotalJuros() {
-		float juros = 0;
-		System.out.println(parcelas.length);
-		for (Parcela p : parcelas) {
-			juros += p.getJuros();
-		}
-		return juros;
+		return fin.calcularTotalJuros(parcelas);
 	}
-	
 }
