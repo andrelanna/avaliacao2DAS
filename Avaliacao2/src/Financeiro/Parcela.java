@@ -15,4 +15,5 @@ public class Parcela {
 	public float getJuros() {
 		return juros;
 	}
+
 }
