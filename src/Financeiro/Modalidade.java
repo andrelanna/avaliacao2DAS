@@ -32,9 +32,9 @@ public abstract class Modalidade {
 		float juros = 0;
 		System.out.println(parcelas.length);
 		for (Parcela p : parcelas) {
-			juros += p.getJuros();
+			juros += p.juros;
 		}
-		
+
 		return juros;
 	}
 
