@@ -1,15 +1,15 @@
-package Financeiro;
-
 public abstract class Modalidade {
 
 	String banco;
 	float i;
     Financiamento fin;
     Parcela[] parcelas;
+    float totalJuros;
 
 	Modalidade(String banco, float i) {
 		this.banco = banco;
 		this.i = i;
+		this.totalJuros = 0;
 	}
 	
 	public static Modalidade criarSimulacao(String modalidade, String banco, float i) {
@@ -27,13 +27,12 @@ public abstract class Modalidade {
 		this.fin = fin;
 	}
 
-	public float calcularTotalJuros() {
-		float juros = 0;
-		System.out.println(parcelas.length);
-		for (Parcela p : parcelas) {
-			juros += p.getJuros();
-		}
-		return juros;
+	public void addTotalJuros(float juros) {
+		totalJuros += juros;
+	}
+
+	public float getTotalJuros() {
+		return totalJuros;
 	}
 	
 }

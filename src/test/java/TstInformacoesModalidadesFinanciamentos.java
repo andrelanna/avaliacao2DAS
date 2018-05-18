@@ -1,10 +1,7 @@
-package tst;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-
-import Financeiro.Modalidade;
 
 public class TstInformacoesModalidadesFinanciamentos {
 

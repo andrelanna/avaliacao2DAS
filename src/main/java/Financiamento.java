@@ -1,5 +1,3 @@
-package Financeiro;
-
 import financeiroExceptions.PrestacaoMaiorQueMargemException;
 
 public class Financiamento {

@@ -1,5 +1,3 @@
-package Financeiro;
-
 public class Parcela {
 	
 	float pmt; 
