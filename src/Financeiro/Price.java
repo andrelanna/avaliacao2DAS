@@ -8,19 +8,19 @@ public class Price extends Modalidade {
 	public float calcularPrestacoes() {
 		parcelas = new Parcela[fin.getN()];
 		
-		float pmt = (float) (Math.pow((1+i), fin.getN()) * i);
-		pmt = (float) (pmt/(Math.pow((1+i), fin.getN()) - 1));
-		pmt = fin.getPv() * pmt;
+		final float auxPmt1 = (float) (Math.pow((1+i), fin.getN()) * i);
+		final float auxPmt2 = (float) (auxPmt1/(Math.pow((1+i), fin.getN()) - 1));
+		final float final_pmt = fin.getPv() * auxPmt2;
 		
-		float a1 = pmt - fin.getPv() * i;
+		float a1 = final_pmt - fin.getPv() * i;
 		for (int i=1; i<= fin.getN(); i++) {
 			float amortizacao = (float) (a1 * Math.pow((1+this.i), i-1));
-			float juros = pmt - amortizacao;
-			Parcela p = new Parcela(pmt, juros, amortizacao);
+			float juros = final_pmt - amortizacao;
+			Parcela p = new Parcela(final_pmt, juros, amortizacao);
 			parcelas[i-1] = p;
 		}
 		
-		return pmt;
+		return final_pmt;
 	}
 	
 }
