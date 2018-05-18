@@ -51,4 +51,13 @@ public class Financiamento {
 	public int getN() {
 		return n;
 	}
+	
+	public float calcularTotalJuros(Modalidade modalidade) {
+		float juros = 0;
+		System.out.println(modalidade.parcelas.length);
+		for (Parcela p : modalidade.parcelas) {
+			juros += p.getJuros();
+		}
+		return juros;
+	}
 }
