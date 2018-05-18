@@ -11,8 +11,8 @@ public class Financiamento {
 	static Financiamento[] financiamentos = new Financiamento[0];
 	
 	private Financiamento (float pv, int n, float margem) {
-		this.pv = pv;
-		this.n = n;
+		this.pv = pv; //present value
+		this.n = n; // número de parcelas
 		this.margem = margem;
 	}
 
