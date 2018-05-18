@@ -60,7 +60,7 @@ public class TstCalculoPrice {
 	@Test
 	public void testCalculoParcelas() {
 		float pmt = mod.calcularPrestacoes();
-		float juros = mod.calcularTotalJuros();
+		float juros = mod.getParcela().calcularTotalJuros(mod);
 		assertEquals(pmtEsperado, pmt, 0.01);
 		assertEquals(jurosEsperados, juros, 0.01);
 	}
