@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="AllTests" project="Avaliacao2" tests="7" started="7" failures="0" errors="0" ignored="0">
+  <testsuite name="tst.AllTests" time="0.001">
+    <testsuite name="tst.TstCalculoPrice" time="0.001">
+      <testsuite name="[0]" time="0.0">
+        <testcase name="testCalculoParcelas[0]" classname="tst.TstCalculoPrice" time="0.0"/>
+      </testsuite>
+      <testsuite name="[1]" time="0.0">
+        <testcase name="testCalculoParcelas[1]" classname="tst.TstCalculoPrice" time="0.0"/>
+      </testsuite>
+      <testsuite name="[2]" time="0.0">
+        <testcase name="testCalculoParcelas[2]" classname="tst.TstCalculoPrice" time="0.0"/>
+      </testsuite>
+      <testsuite name="[3]" time="0.0">
+        <testcase name="testCalculoParcelas[3]" classname="tst.TstCalculoPrice" time="0.0"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="tst.TstInformacoesFinanciamento" time="0.0">
+      <testcase name="testeInformarDadosFinanciamentoInvalido" classname="tst.TstInformacoesFinanciamento" time="0.0"/>
+      <testcase name="testeInformarDadosFinanciamento" classname="tst.TstInformacoesFinanciamento" time="0.0"/>
+    </testsuite>
+    <testsuite name="tst.TstInformacoesModalidadesFinanciamentos" time="0.0">
+      <testcase name="testeCriacaoFinanciamentoPrice" classname="tst.TstInformacoesModalidadesFinanciamentos" time="0.0"/>
+    </testsuite>
+  </testsuite>
+</testrun>
