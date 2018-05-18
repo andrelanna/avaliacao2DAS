@@ -7,23 +7,19 @@ public class Price extends Modalidade {
 
 	public float calcularPrestacoes() {
 		parcelas = new Parcela[fin.getN()];
+		//objeto que virou método objeto:
+		CalculadorDePestacoes calculador = new CalculadorDePestacoes();
 		
-		// aplicando Dividir variável temporária em pmt:
+		// chamando um dos métodos do objeto método:
+		float pmt_final = calculador.calcularPmtFinal(parcelas, fin, i);
 		
-		float pmt1, pmt2, pmt_final;
-		pmt1 = (float) (Math.pow((1+i), fin.getN()) * i);
-		pmt2 = (float) (pmt1/(Math.pow((1+i), fin.getN()) - 1));
-		pmt_final = fin.getPv() * pmt2;
-		
-		float a1 = pmt_final - fin.getPv() * i;
-		for (int i=1; i<= fin.getN(); i++) {
-			float amortizacao = (float) (a1 * Math.pow((1+this.i), i-1));
-			float juros = pmt_final - amortizacao;
-			Parcela p = new Parcela(pmt_final, juros, amortizacao);
-			parcelas[i-1] = p;
+		for (int aux=1; aux<= fin.getN(); aux++) {
+			// chamando o segundo método do objeto método:
+			calculador.calculaAmortizacaoEJuros(parcelas, fin,this.i, pmt_final, aux);
 		}
 		
 		return pmt_final;
 	}
-	
+
+
 }
