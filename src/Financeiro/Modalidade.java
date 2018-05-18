@@ -3,13 +3,13 @@ package Financeiro;
 public abstract class Modalidade {
 
 	String banco;
-	float i;
+	float interest;
     Financiamento fin;
     Parcela[] parcelas;
 
 	Modalidade(String banco, float i) {
 		this.banco = banco;
-		this.i = i;
+		this.interest = i;
 	}
 	
 	public static Modalidade criarSimulacao(String modalidade, String banco, float i) {
