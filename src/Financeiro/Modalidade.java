@@ -26,7 +26,12 @@ public abstract class Modalidade {
 	public void adicionarFinanciamento(Financiamento fin) {
 		this.fin = fin;
 	}
-
+	
+	
+	// Não consegui encontrar uma indireção nesse método para que fosse possível aplicar
+	// remover homem do meio, tendo em vista que a classe cliente (Modalidade) requer
+	// algo (juros) de forma direta da classe Parcelas, ou seja, não há uma classe entre 
+	// essas duas.
 	public float calcularTotalJuros() {
 		float juros = 0;
 		System.out.println(parcelas.length);
