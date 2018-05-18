@@ -8,9 +8,10 @@ public class Price extends Modalidade {
 	public float calcularPrestacoes() {
 		parcelas = new Parcela[fin.getN()];
 		
-		float pmt = (float) (Math.pow((1+i), fin.getN()) * i);
-		pmt = (float) (pmt/(Math.pow((1+i), fin.getN()) - 1));
-		pmt = fin.getPv() * pmt;
+		final float numerador = (float) (Math.pow((1+i), fin.getN()) * i);
+		final float denominador = (float) (Math.pow((1+i), fin.getN()) - 1); 
+		final float divisao = (float) (numerador/denominador);
+		final float pmt = fin.getPv() * divisao;
 		
 		float a1 = pmt - fin.getPv() * i;
 		for (int i=1; i<= fin.getN(); i++) {
