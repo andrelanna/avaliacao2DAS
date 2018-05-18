@@ -6,6 +6,7 @@ public abstract class Modalidade {
 	float i;
     Financiamento fin;
     Parcela[] parcelas;
+    static Pmt pmt;
 
 	Modalidade(String banco, float i) {
 		this.banco = banco;
@@ -14,11 +15,17 @@ public abstract class Modalidade {
 	
 	public static Modalidade criarSimulacao(String modalidade, String banco, float i) {
 		Modalidade resposta = null;
-		if (modalidade.equalsIgnoreCase("Price"))
+		if (modalidade.equalsIgnoreCase("Price")) {
 			resposta = new Price(banco, i);
+			pmt = resposta.getPmt();
+		}
 		else 
 			resposta = null;
 		return resposta;
+	}
+	
+	public Pmt getPmt() {
+		return pmt;
 	}
 
 	public abstract float calcularPrestacoes() ;
@@ -28,11 +35,7 @@ public abstract class Modalidade {
 	}
 
 	public float calcularTotalJuros() {
-		float juros = 0;
-		System.out.println(parcelas.length);
-		for (Parcela p : parcelas) {
-			juros += p.getJuros();
-		}
+		float juros = pmt.getJuros(fin);
 		return juros;
 	}
 	
