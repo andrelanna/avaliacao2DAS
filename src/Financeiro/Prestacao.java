@@ -11,7 +11,7 @@ public class Prestacao {
 	}
 	
 	public float calcularPrestacoes() {
-		_price.parcelas = new Parcela[_price.fin.getN()];
+		_price._parcelas = new Parcela[_price.fin.getN()];
 		
 		float parcelaPrime = (float) (Math.pow((1+_price.i), _price.fin.getN()) * _price.i);
 		float parcelaPrime2 = (float) (parcelaPrime/(Math.pow((1+_price.i), _price.fin.getN()) - 1));
@@ -22,7 +22,7 @@ public class Prestacao {
 			float amortizacao = (float) (a1 * Math.pow((1+this._price.i), i-1));
 			float juros = parcelaPrime3 - amortizacao;
 			Parcela p = new Parcela(parcelaPrime3, juros, amortizacao);
-			_price.parcelas[i-1] = p;
+			_price._parcelas[i-1] = p;
 		}
 		
 		return parcelaPrime3;

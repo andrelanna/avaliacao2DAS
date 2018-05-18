@@ -5,7 +5,7 @@ public abstract class Modalidade {
 	String banco;
 	float i;
     Financiamento fin;
-    Parcela[] parcelas;
+    Parcela[] _parcelas;
 
 	Modalidade(String banco, float i) {
 		this.banco = banco;
@@ -20,8 +20,11 @@ public abstract class Modalidade {
 			resposta = null;
 		return resposta;
 	}
+	public Parcela[] getParcelas() {
+		return _parcelas;
+	}
 
-	public abstract float calcularPrestacoes() ;
+	public abstract float calcularPrestacoes();
 
 	public void adicionarFinanciamento(Financiamento fin) {
 		this.fin = fin;
@@ -29,8 +32,8 @@ public abstract class Modalidade {
 
 	public float calcularTotalJuros() {
 		float juros = 0;
-		System.out.println(parcelas.length);
-		for (Parcela p : parcelas) {
+		System.out.println(getParcelas().length);
+		for (Parcela p : getParcelas()) {
 			juros += p.getJuros();
 		}
 		return juros;
