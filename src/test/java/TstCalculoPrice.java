@@ -1,4 +1,3 @@
-package tst;
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,8 +10,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-import Financeiro.Financiamento;
-import Financeiro.Modalidade;
 import financeiroExceptions.PrestacaoMaiorQueMargemException;
 
 @RunWith(Parameterized.class)

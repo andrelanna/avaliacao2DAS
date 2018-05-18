@@ -1,11 +1,7 @@
-package tst;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-import org.junit.experimental.categories.Categories.ExcludeCategory;
-
-import Financeiro.Financiamento;
 import financeiroExceptions.PrestacaoMaiorQueMargemException;
 
 public class TstInformacoesFinanciamento {

@@ -1,5 +1,3 @@
-package Financeiro;
-
 public abstract class Modalidade {
 
 	String banco;
