@@ -1,0 +1,3 @@
+Resposta Q3
+
+Não é possível aplicar a operação de refatoração Remover homem do meio no método Modalidade.calcularTotalJuros() de modo a extrair a indireção presente nesse método, por que nesse método a classe Modalidade só se comunica com uma outra classe que é a classe Parcela. Além disso a classse só faz uso do atributo "juros" que esta na classe parcela nesse método. Como não há nenhuma outra classe intermediando a comunicação entre a classe Modalidade e o atributo juros da classe Parcela, não faz sentido aplicar essa refatoração.
