@@ -7,12 +7,17 @@ public class Price extends Modalidade {
 
 	public float calcularPrestacoes() {
 		parcelas = new Parcela[fin.getN()];
-		float pmt;
 		
-		final float primaryPmt = (float) (Math.pow((1+i), fin.getN()) * i);
+		float primaryPmt = (float) (Math.pow((1+i), fin.getN()) * i);
 		float secondPmt = (float) (primaryPmt/(Math.pow((1+i), fin.getN()) - 1));
 		float thirtPmt = fin.getPv() * secondPmt;
 		
+		calculaAmortizacao(thirtPmt);
+		
+		return thirtPmt;
+	}
+	
+	public void calculaAmortizacao(float thirtPmt){
 		float a1 = thirtPmt - fin.getPv() * i;
 		for (int i=1; i<= fin.getN(); i++) {
 			float amortizacao = (float) (a1 * Math.pow((1+this.i), i-1));
@@ -20,8 +25,6 @@ public class Price extends Modalidade {
 			Parcela p = new Parcela(thirtPmt, juros, amortizacao);
 			parcelas[i-1] = p;
 		}
-		
-		return thirtPmt;
 	}
 	
 }
