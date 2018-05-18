@@ -1,14 +1,14 @@
 
 import static org.junit.Assert.*;
 
-import org.junit.Test;
 import financeiroExceptions.PrestacaoMaiorQueMargemException;
+import org.junit.Test;
 
 public class TstInformacoesFinanciamento {
 
 	
 	@Test
-	public void testeInformarDadosFinanciamento() throws PrestacaoMaiorQueMargemException{
+	public void testeInformarDadosFinanciamento() throws PrestacaoMaiorQueMargemException {
 			Financiamento f = Financiamento.criarFinanciamento(10000f, 12, 2000);
 			assertNotNull(f);
 	}
