@@ -46,9 +46,16 @@ public class Financiamento {
 		return pv;
 	}
 
-	
-
 	public int getN() {
 		return n;
+	}
+	
+	public float calcularTotalJuros() {
+		float juros = 0;
+		System.out.println(simulacoes[0].getParcelas().length);
+		for (int i = 0; i < simulacoes[0].getParcelas().length; i++) {
+			juros += simulacoes[0].getParcelas()[i].getJuros();
+		}
+		return juros;
 	}
 }

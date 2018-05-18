@@ -12,6 +12,10 @@ public abstract class Modalidade {
 		this.i = i;
 	}
 	
+	public Parcela[] getParcelas() {
+		return this.parcelas;
+	}
+	
 	public static Modalidade criarSimulacao(String modalidade, String banco, float i) {
 		Modalidade resposta = null;
 		if (modalidade.equalsIgnoreCase("Price"))
@@ -27,13 +31,10 @@ public abstract class Modalidade {
 		this.fin = fin;
 	}
 
+	//  Passando esse método para a classe Financiamento, remove-se a possível indireção
+	//  de modo que é necessário ter uma chamada de modalidade.parcela.[Atributo Desejado]
 	public float calcularTotalJuros() {
-		float juros = 0;
-		System.out.println(parcelas.length);
-		for (Parcela p : parcelas) {
-			juros += p.getJuros();
-		}
-		return juros;
+		return fin.calcularTotalJuros();
 	}
-	
+
 }
