@@ -4,20 +4,21 @@ public abstract class Modalidade {
 
 	String banco;
 	float i;
-    Financiamento fin;
-    Parcela[] parcelas;
+  Financiamento fin;
+  Parcela[] parcelas;
 
 	Modalidade(String banco, float i) {
 		this.banco = banco;
 		this.i = i;
 	}
-	
+
 	public static Modalidade criarSimulacao(String modalidade, String banco, float i) {
 		Modalidade resposta = null;
 		if (modalidade.equalsIgnoreCase("Price"))
 			resposta = new Price(banco, i);
-		else 
+		else
 			resposta = null;
+
 		return resposta;
 	}
 
@@ -31,9 +32,10 @@ public abstract class Modalidade {
 		float juros = 0;
 		System.out.println(parcelas.length);
 		for (Parcela p : parcelas) {
-			juros += p.getJuros();
+			juros += p.juros;
 		}
+
 		return juros;
 	}
-	
+
 }
