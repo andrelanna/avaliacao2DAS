@@ -28,6 +28,22 @@ public abstract class Modalidade {
 	}
 
 	public float calcularTotalJuros() {
+		
+		
+		// Interpretando o problema
+		/*
+		 * Para que exista um "Homem do meio", é preciso que haja uma
+		 * classe intermediando o acesso da Modalidade à Parcela.
+		 * Como A modalidade é capaz de acessar o juros de cada
+		 * parcela diretamente, considero que não há um middle man.
+		 * 
+		 * Obs: A Modalidade não é um Middle Man porque
+		 * o método "calcularTotalJuros" não é chamado em nenhuma
+		 * outra classe (apenas no teste), logo, a Modalidade é a
+		 * Classe Cliente da situação.
+		 * 
+		 */
+		
 		float juros = 0;
 		System.out.println(parcelas.length);
 		for (Parcela p : parcelas) {
