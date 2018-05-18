@@ -41,6 +41,17 @@ public class Financiamento {
 		simulacoes = temp;
 		return true;
 	}
+	
+
+	public float calcularTotalJuros(Modalidade simulacao) {
+		float juros = 0;
+		System.out.println(simulacao.getParcelas().length);
+		
+		for (Parcela p : simulacao.getParcelas()) {
+			juros += p.getJuros();
+		}
+		return juros;
+	}
 
 	public float getPv() {
 		return pv;
