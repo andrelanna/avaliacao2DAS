@@ -1,0 +1,29 @@
+package Financeiro;
+
+public class Price extends Modalidade {
+	public Price(String banco, float i) {
+		super(banco, i);
+	}
+
+	public float calcularPrestacoes() {
+		parcelas = new Parcela[fin.getN()];
+		
+		float pmtAmort = (float) (Math.pow((1+i), fin.getN()) * i);
+		
+		float pmtPV = (float) (pmtAmort/(Math.pow((1+i), fin.getN()) - 1));
+		
+		float pmtJuros = fin.getPv() * pmtPV;
+		
+		float a1 = pmt - fin.getPv() * i;
+		
+		for (int i=1; i<= fin.getN(); i++) {
+			float amortizacao = (float) (a1 * Math.pow((1+this.i), i-1));
+			float juros = pmt - amortizacao;
+			Parcela p = new Parcela(pmt, juros, amortizacao);
+			parcelas[i-1] = p;
+		}
+		
+		return pmt;
+	}
+	
+}
