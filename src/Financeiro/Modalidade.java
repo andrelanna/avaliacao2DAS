@@ -26,7 +26,15 @@ public abstract class Modalidade {
 	public void adicionarFinanciamento(Financiamento fin) {
 		this.fin = fin;
 	}
-
+	
+	// Aqui, pelo entendimento da indireção, esta própria classe (Modalidade), possui
+	// 	relação direta com Parcela, executando o método getJuros, por esse motivo, 
+	//	a partir do meu entendimento, não há uma indireção, não há nenhum outro objeto 
+	// 	se comunicando indiretamente para ter o valor dos juros, pois existe uma 
+	// 	comunicação direta entre Modalidade e Parcela.
+	// Caso a indireção seja interpretada para se ter o juros
+	// 	diretamente na presente classe, poderia interferir em um dos princípios SOLID de 
+	// 	responsabilidade única.
 	public float calcularTotalJuros() {
 		float juros = 0;
 		System.out.println(parcelas.length);
