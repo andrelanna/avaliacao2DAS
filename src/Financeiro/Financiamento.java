@@ -46,8 +46,6 @@ public class Financiamento {
 		return pv;
 	}
 
-	
-
 	public int getN() {
 		return n;
 	}

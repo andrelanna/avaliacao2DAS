@@ -35,6 +35,7 @@ public class Price extends Modalidade {
 			float juros = pmt - amortizacao;
 			Parcela p = new Parcela(pmt, juros, amortizacao);
 			parcelas[i-1] = p;
+			calcularTotalJuros(juros);
 		}
 	}
 	
