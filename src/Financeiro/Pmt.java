@@ -18,6 +18,17 @@ public class Pmt {
 		// TODO Auto-generated constructor stub
 	}
 	
+
+	public float getJuros(Financiamento fin) {
+		float aux_juros = 0;
+		System.out.println(parcelas.length);
+		for (Parcela p : parcelas) {
+			aux_juros += p.getJuros();
+		}
+
+		return aux_juros;
+	}
+	
 	public Parcela[] computaParcela(Financiamento fin,float i){
 		parcelas = new Parcela[fin.getN()];
 		
