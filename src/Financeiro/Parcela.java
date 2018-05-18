@@ -12,7 +12,7 @@ public class Parcela {
 		this.amortizacao = amortizacao;
 	}
 
-	public float getJuros() {
-		return juros;
-	}
+	// public float getJuros() {
+	// 	return juros;
+	// }
 }
