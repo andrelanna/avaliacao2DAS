@@ -13,6 +13,7 @@ import org.junit.runners.Parameterized.Parameters;
 
 import Financeiro.Financiamento;
 import Financeiro.Modalidade;
+import Financeiro.Parcela;
 import financeiroExceptions.PrestacaoMaiorQueMargemException;
 
 @RunWith(Parameterized.class)
@@ -60,7 +61,14 @@ public class TstCalculoPrice {
 	@Test
 	public void testCalculoParcelas() {
 		float pmt = mod.calcularPrestacoes();
-		float juros = mod.calcularTotalJuros();
+		
+//		float juros = mod.calcularTotalJuros();
+		float juros = 0;
+		System.out.println(mod.parcelas.length);
+		for (Parcela p : mod.parcelas) {
+			juros += p.getJuros();
+		}
+		
 		assertEquals(pmtEsperado, pmt, 0.01);
 		assertEquals(jurosEsperados, juros, 0.01);
 	}
