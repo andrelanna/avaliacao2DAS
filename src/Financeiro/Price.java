@@ -5,7 +5,6 @@ public class Price extends Modalidade {
 		super(banco, i);
 	}
 
-
 	public float calcularPrestacoes() {
 		parcelas = new Parcela[fin.getN()];
 		
@@ -23,5 +22,16 @@ public class Price extends Modalidade {
 		
 		return pmt_final;
 	}
+
+	// depois da refatoracao da questao 2
+	
+	// Parcela parcelas = new Parcela[fin.getN()];
+	// CalcularPrestacoes calculoPrestacoes = new CalcularPrestacoes(parcelas);
+
+	// public float calcularPrestacoes() {
+	// 	float pmt_final = calcularPrestacoes.calculate(parcelas);
+	// 	return pmt_final
+	// }
+
 	
 }
