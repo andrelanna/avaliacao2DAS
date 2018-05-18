@@ -3,9 +3,9 @@ package Financeiro;
 public abstract class Modalidade {
 
 	String banco;
-	float i;
-    Financiamento fin;
-    Parcela[] parcelas;
+	private float i;
+    private Financiamento fin;
+    private Parcela[] parcelas;
 
 	Modalidade(String banco, float i) {
 		this.banco = banco;
@@ -28,12 +28,23 @@ public abstract class Modalidade {
 	}
 
 	public float calcularTotalJuros() {
-		float juros = 0;
-		System.out.println(parcelas.length);
-		for (Parcela p : parcelas) {
-			juros += p.getJuros();
-		}
-		return juros;
+		return fin.calcularTotalJuros(this);
+	}
+	
+	public Parcela[] getParcelas() {
+		return parcelas;
+	}
+	
+	public Financiamento getFin() {
+		return fin;
+	}
+	
+	public float getI() {
+		return i;
+	}
+	
+	public void setParcelas(Parcela[] parcelas) {
+		this.parcelas = parcelas;
 	}
 	
 }
