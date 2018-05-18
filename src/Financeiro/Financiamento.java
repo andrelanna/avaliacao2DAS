@@ -11,8 +11,8 @@ public class Financiamento {
 	static Financiamento[] financiamentos = new Financiamento[0];
 	
 	private Financiamento (float pv, int n, float margem) {
-		this.pv = pv;
-		this.n = n;
+		this.pv = pv; //present value
+		this.n = n; // número de parcelas
 		this.margem = margem;
 	}
 
@@ -51,4 +51,14 @@ public class Financiamento {
 	public int getN() {
 		return n;
 	}
+	
+	public float calcularTotalJuros(Modalidade modalidade) {
+		float juros = 0;
+		System.out.println(modalidade.parcelas.length);
+		for (Parcela p : modalidade.parcelas) {
+			juros += p.getJuros();
+		}
+		return juros;
+	}
+	
 }
